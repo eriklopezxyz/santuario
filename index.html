@@ -34,11 +34,14 @@
 
       <a-asset-item id="muac" src="./assets/muac.gltf"></a-asset-item>
 
-
     </a-assets>
 
     <!-- OBJETOS -->
     <a-entity static-body gltf-model="#muac" scale="1 1 1" position="-60 2.5 15"></a-entity>
+
+    <!-- MUSICA -->
+    <a-sound src="src: url(./assets/santuario.mp3)" autoplay="true" loop="true" volume="1" position= "7 12 26"></a-sound>
+ 
 
     <!-- PAREDES -->
     <a-box static-body color="white" position="-6.5 2.3 -2.4" scale="9 4.6 1"></a-box>
@@ -53,9 +56,7 @@
     <!-- AMBIENTE -->
     <a-entity environment="preset: default ; ground: canyon ; groundColor: #828282; groundColor2: #828282 ; grid: none"></a-entity>
 
-    <!-- MUSICA -->
-    <a-sound src="src: url(./assets/santuario.mp3)" autoplay="true" loop="true" volume="1" position= "7 12 26"></a-sound>
- 
+    
 
   </a-scene>
 </body>
