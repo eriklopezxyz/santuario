@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuarta sesión</title>
+
+   <!-- SCRIPT DE AFRAME -->
+  <script src=" https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <!-- LIBRERIA DE LOS AMBIENTES -->
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+  <!-- LIBRERIAS DE COLISIONES Y FÍSICAS -->
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+  <!-- MOVIMIENTO DE LA CAMARA -->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
+</head>
+
+<body>
+
+  <!-- COLOCAR  -- "debug: true" en physics para visualizar el tamaño de la solidez del objeto -->
+  <a-scene physics="gravity:0; debug: true">
+
+    <a-entity movement-controls kinematic-body>
+      <a-entity id="camera" camera position="4 11.5 25" look-controls></a-entity>
+    </a-entity>
+
+
+    <a-assets>
+
+      <a-asset-item id="muac" src="./assets/muac.gltf"></a-asset-item>
+
+
+    </a-assets>
+
+    <!-- OBJETOS -->
+    <a-entity static-body gltf-model="#muac" scale="1 1 1" position="-60 2.5 15"></a-entity>
+
+    <!-- PAREDES -->
+    <a-box static-body color="white" position="-6.5 2.3 -2.4" scale="9 4.6 1"></a-box>
+    <a-box static-body color="white" position="17 2 34" scale="9 4.5 1"></a-box>
+    <a-box static-body color="white" position="-20 2.3 -13.5" scale="22 4.5 1" rotation="0 90 0"></a-box>
+    <a-box static-body color="white" position="1 2 -24" scale="22 4.5 1"></a-box>
+
+    <!-- ILUMINACIÓN -->
+    <a-entity light="intensity: 0.1; type: point;" position="38 4.5 -7.5"></a-entity>
+    <a-entity light="intensity: 0.1; type: ambient" position="0 10 -14.5"></a-entity>
+
+    <!-- AMBIENTE -->
+    <a-entity environment="preset: default ; ground: canyon ; groundColor: #828282; groundColor2: #828282 ; grid: none"></a-entity>
+
+    <!-- MUSICA -->
+    <a-sound src="src: url(./assets/santuario.mp3)" autoplay="true" loop="true" volume="1" position= "7 12 26"></a-sound>
+ 
+
+  </a-scene>
+</body>
+
+</html>
